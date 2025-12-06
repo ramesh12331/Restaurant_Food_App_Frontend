@@ -8,6 +8,7 @@ import { BiSolidOffer } from "react-icons/bi";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 // import {Hairball} from 'react-loader-spinner'
 import { Vortex } from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
 const Chains = () => {
   const [vendorData, setVendorData] = useState([]);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -123,7 +124,7 @@ colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
 
     {vendorData.vendor && vendorData.vendor.map((vendor) =>
       vendor.firm.map((item) => (
-        <div
+        <Link to={`/products/${item._id}`}
           key={item._id}
           className="min-w-[250px] h-40 relative rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
         >
@@ -148,7 +149,7 @@ colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
               <BiSolidOffer className='text-red-700 size-5'/> <span>{item.offer}</span>
             </p>
           </div>
-        </div>
+        </Link>
       ))
     )}
 
