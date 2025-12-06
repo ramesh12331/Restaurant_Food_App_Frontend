@@ -1,0 +1,1 @@
+export const API_URI = "https://restaurant-backend-9d70.onrender.com"
